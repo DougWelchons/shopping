@@ -55,17 +55,4 @@ class MarketTest < Minitest::Test
     assert_equal [vendor2], market.vendors_that_sell(item4)
   end
 
-  def test_it_can_return_potential_revenue
 end
-
-
-
-
-# vendor1.potential_revenue
-# 29.75
-#
-# vendor2.potential_revenue
-# 345.00
-#
-# vendor3.potential_revenue
-# 48.75
