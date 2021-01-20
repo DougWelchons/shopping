@@ -32,4 +32,23 @@ class Market
       total_inventory
     end
   end
+
+  def overstocked_items
+    items = total_inventory
+    overstock = []
+    items.each do |item, qty_and_vendors|
+      if qty_and_vendors[:quantity] > 50 &&
+        qty_and_vendors[:vendors].count > 1
+        overstock << item
+      end
+    end
+    overstock
+  end
+
+  def sorted_item_list
+    items = total_inventory.keys
+    items.map do |item|
+      item.name
+    end.sort
+  end
 end
