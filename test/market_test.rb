@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'mocha/minitest'
 require './lib/market'
 require './lib/vendor'
 require './lib/item'
@@ -138,5 +139,12 @@ class MarketTest < Minitest::Test
     expected = ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"]
 
     assert_equal expected, market.sorted_item_list
+  end
+
+  def test_it_can_return_the_markets_date
+    Date.stubs(:today).returns(Time.mktime(2021, 1, 4))
+    market = Market.new("South Pearl Street Farmers Market")
+
+    assert_equal '04/01/2021', market.date
   end
 end
