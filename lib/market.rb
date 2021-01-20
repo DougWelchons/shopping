@@ -54,4 +54,23 @@ class Market
       item.name
     end.sort
   end
+#### dream coding vendor methods not created
+#   def sell(item, qty)
+#     inventory = total_inventory
+#     quantity = qty
+#     if inventory[item][:quantity] > qty
+#       inventory[item][:vendors].each do|vendor|
+#         if vendor.inventory[item] < quantity
+#           quantity -= vendor.inventory[item]
+#           vendor.sell_all(item)
+#         else
+#           vendor.sell_item(item, quantity)
+#           quantity = 0
+#         end
+#         true
+#       end
+#     else
+#       false
+#     end
+#   end
 end
